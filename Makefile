@@ -16,7 +16,7 @@ heroku_login:
 	-@heroku login
 
 heroku_create_app:
-	-@heroku create ${APP_NAME}
+	-@heroku create audio-summarizer
 
 deploy_heroku:
 	-@git push heroku master
