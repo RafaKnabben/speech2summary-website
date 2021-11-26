@@ -16,8 +16,7 @@ button
 params = {"url": url_input}
 
 if button:
-    res = requests.get(url, params=params)
-    print(type(res))
+    res = requests.get(url, params=params).json()
     #text = res.json()
-    #summ = text['Summarized text']
-    #st.write(summ)
+    summ = res['Summarized text']
+    st.write(summ)
