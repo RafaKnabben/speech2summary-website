@@ -5,7 +5,7 @@ import requests
 st.markdown('''## Video Audio Summarizer
 ''')
 
-url = "https://test--2511-m67ja235na-ew.a.run.app/docs#/default/get_all_all_steps_test_get"
+url = "https://test--2511-m67ja235na-ew.a.run.app/all_steps_test"
 
 form = st.form(key="uploading")
 url_input = form.text_input("Video link", "http://")
@@ -16,7 +16,7 @@ button
 params = {"url": url_input}
 
 if button:
-    res = requests.get(url, params=params).json()
-    #text = res.json()
+    res = requests.get(url, params=params)
+    text = res.json()
     summ = res['Summarized text']
-    st.write(summ)
+    summ
