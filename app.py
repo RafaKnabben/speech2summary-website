@@ -19,4 +19,4 @@ if button:
     res = requests.get(url, params=params)
     text = res.json()
     summ = text['Summarized text']
-    summ
+    st.write(str(summ))
