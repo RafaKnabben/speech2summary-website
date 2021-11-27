@@ -15,6 +15,12 @@ button
 
 params = {"url": url_input}
 
+CSS_summary = """
+    p {
+        backgroung-color: 'red'
+    }
+"""
+
 def capital_letters(text):
     capitalized = ""
     if text[0] != text[0].capitalize():
@@ -34,4 +40,4 @@ if button:
     text = res.json()
     summ = text['Summarized text']
     summ = capital_letters(summ)
-    st.write(str(summ))
+    st.write(f'<style>{CSS_summary}</style>', str(summ))
