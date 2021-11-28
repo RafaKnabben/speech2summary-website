@@ -17,7 +17,7 @@ params = {"url": url_input}
 
 CSS_summary = """
     p {
-        backgroung-color: 'red'
+        background-color: 'red';
     }
 """
 
@@ -40,4 +40,4 @@ if button:
     text = res.json()
     summ = text['Summarized text']
     summ = capital_letters(summ)
-    st.write(str(summ), f'<style>{CSS_summary}</style>', unsafe_allow_html=True)
+    st.write(str(summ))
