@@ -17,7 +17,7 @@ params = {"url": url_input}
 
 CSS_summary = """
     p {
-        background-color: 'red';
+        background-color: 'red'
     }
 """
 
