@@ -40,4 +40,4 @@ if button:
     text = res.json()
     summ = text['Summarized text']
     summ = capital_letters(summ)
-    st.write(str(summ))
+    st.write(str(summ), f'<style>{CSS_summary}</style>', unsafe_allow_html=True)
