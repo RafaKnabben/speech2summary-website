@@ -7,12 +7,6 @@ st.set_page_config(page_title="Speech Summarizer",
 
 url = "https://video-audio-summ-ext-abs-m67ja235na-ew.a.run.app/abs_ext_all_test"
 
-CSS_summary = """
-    p {
-        backgroung-color: 'red'
-    }
-"""
-
 '''
 # Video Summarizer
 '''
@@ -37,8 +31,11 @@ with col1:
     if button:
         res = requests.get(url, params=params)
         text = res.json()
-        summ = text['Summarized text']
-        col2.write(str(summ), f'<style>{CSS_summary}</style>', unsafe_allow_html=True)
+        #text["video_information"]["title"], text["video_information"]["duration"]
+        text["abstractive_summary"]
+        text["extractive_summary"]
+        #summ = text['Summarized text']
+        #col2.write(str(text))
 
 with col2:
     """
