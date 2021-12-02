@@ -1,9 +1,9 @@
 import streamlit as st
 import requests
 
+
 st.set_page_config(page_title="Speech Summarizer",
-                   initial_sidebar_state="expanded",
-                   layout="wide")
+                   initial_sidebar_state="expanded")
 
 url = "https://video-audio-summ-ext-abs-m67ja235na-ew.a.run.app/abs_ext_all_test"
 
@@ -12,33 +12,48 @@ url = "https://video-audio-summ-ext-abs-m67ja235na-ew.a.run.app/abs_ext_all_test
 '''
 
 st.markdown(
-'''Our application allows users to create a summary of a given speech on video or audio.
-Simply use the features below and it will output an abstractive summary from your given media input.
+'''Our application is an NLP-based application that allows users to generate a text summary based on a video.
+Our model combines three pre-trained models: DeepSpeech, T5 and BERTSUM.
+To try out our app, simply input a url here:
     ''')
 
-col1, col2 = st.columns(2)
 
+form = st.form(key="uploading")
+url_input = form.text_input("Video link", "http://")
 
-with col1:
+button = form.form_submit_button("Submit!")
+button
 
-    form = col1.form(key="uploading")
-    url_input = form.text_input("Video link", "http://")
+params = {"url": url_input}
 
-    button = form.form_submit_button("Submit!")
-    button
+st.markdown(
+    """
+    Our app will produce two different summaries:
 
-    params = {"url": url_input}
+    1) Extractive Summary
 
-    if button:
-        res = requests.get(url, params=params)
-        text = res.json()
+    2) Abstractive Summary
+    """)
+
+st.markdown(
+''' ## Summaries:
+    ''')
+if button:
+        #res = requests.get(url, params=params)
+        #text = res.json()
         #text["video_information"]["title"], text["video_information"]["duration"]
-        text["abstractive_summary"]
-        text["extractive_summary"]
+        st.write("Abstractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ")
+        #st.write(text["abstractive_summary"])
+        #text["extractive_summary"]
+        st.write("Extractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ")
+        #st.write(text["abstractive_summary"])
         #summ = text['Summarized text']
-        #col2.write(str(text))
+        #st.write(str(text))
 
-with col2:
-    """
-    Here's your summaries
-    """
+
+st.markdown(
+''' ## Contact:
+    ''')
+st.markdown(
+'''We are a group of Data Science students from Le Wagon Berlin. To learn more about our application, visit our Github Page: https://github.com/RafaKnabben/meeting_summarizer
+    ''')
