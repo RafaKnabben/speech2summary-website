@@ -42,10 +42,9 @@ if button:
         #res = requests.get(url, params=params)
         #text = res.json()
         #text["video_information"]["title"], text["video_information"]["duration"]
-        st.write("Abstractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ")
+        st.write("Abstractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ")
         #st.write(text["abstractive_summary"])
-        #text["extractive_summary"]
-        st.write("Extractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ")
+        st.write("Extractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ")
         #st.write(text["abstractive_summary"])
         #summ = text['Summarized text']
         #st.write(str(text))
