@@ -5,10 +5,10 @@ import requests
 st.set_page_config(page_title="Speech Summarizer",
                    initial_sidebar_state="expanded")
 
-url = "https://video-audio-summ-ext-abs-m67ja235na-ew.a.run.app/abs_ext_all_test"
+url = "https://video-summarizer-m67ja235na-ew.a.run.app/abs_ext_all_test"
 
 '''
-# Video Summarizer
+# Video/Audio Summarizer
 '''
 
 st.markdown(
@@ -19,7 +19,7 @@ To try out our app, simply input a url here:
 
 
 form = st.form(key="uploading")
-url_input = form.text_input("Video link", "http://")
+url_input = form.text_input("Video link")
 
 button = form.form_submit_button("Submit!")
 button
@@ -39,13 +39,13 @@ st.markdown(
 ''' ## Summaries:
     ''')
 if button:
-        #res = requests.get(url, params=params)
-        #text = res.json()
-        #text["video_information"]["title"], text["video_information"]["duration"]
-        st.write("Abstractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ")
-        #st.write(text["abstractive_summary"])
-        st.write("Extractive Text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ")
-        #st.write(text["abstractive_summary"])
+        res = requests.get(url, params=params)
+        text = res.json()
+        text["video_information"]["title"], text["video_information"]["duration"]
+        st.write("Abstractive Text:")
+        st.write(text["abstractive_summary"])
+        st.write("Extractive Text:")
+        st.write(text["abstractive_summary"])
         #summ = text['Summarized text']
         #st.write(str(text))
 
