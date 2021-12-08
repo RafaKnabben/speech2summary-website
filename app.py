@@ -4,7 +4,7 @@ import requests
 st.set_page_config(page_title="Speech Summarizer",
                    initial_sidebar_state="expanded")
 
-url = "https://video-summarizer-m67ja235na-ew.a.run.app/abs_ext_all_test"
+url = "https://video-summ-demo-day-fin-m67ja235na-ew.a.run.app/abs_ext_all_test"
 '''
 # Video/Audio Summarizer
 '''
@@ -25,8 +25,8 @@ params = {"url": url_input}
 
 st.markdown("""
     Our app will produce two different summaries:
-    1) Extractive Summary
-    2) Abstractive Summary
+    1) Abstractive Summary
+    2) Extractive Summary
     """)
 
 st.markdown(''' ## Summaries:
